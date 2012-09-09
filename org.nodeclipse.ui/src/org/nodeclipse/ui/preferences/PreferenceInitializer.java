@@ -23,6 +23,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
             path = "C:/Program Files/nodejs/node.exe";
         }
         store.setDefault(PreferenceConstants.NODE_PATH, path);
+        
+        String express_path = "/usr/local/bin/express";
+        store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
     }
 
 }

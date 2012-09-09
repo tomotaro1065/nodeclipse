@@ -1,7 +1,6 @@
 package org.nodeclipse.ui.wizards;
 
 import java.net.URI;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
@@ -31,7 +30,6 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMes
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
-import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Button;
 
 @SuppressWarnings("restriction")
@@ -100,24 +98,24 @@ public class ExpressProjectWizardPage extends WizardPage {
         // Show description on opening
         setErrorMessage(null);
         setMessage(null);
-        if(!isExpressInstalled()) {
-        	setErrorMessage("Express is not found. Please install Express and check Preference.");
+        if (!isExpressInstalled()) {
+            setErrorMessage("Express is not found. Please install Express and check Preference.");
         }
-        
+
         setControl(composite);
-        Dialog.applyDialogFont(composite);    
+        Dialog.applyDialogFont(composite);
     }
 
     private boolean isExpressInstalled() {
-    	String path = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.EXPRESS_PATH);
-    	if(path == null || path.equals("")) {
-    		return false;
-    	}
-    	
-    	java.io.File file = new java.io.File(path);
-    	return file.exists();
+        String path = Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.EXPRESS_PATH);
+        if (path == null || path.equals("")) {
+            return false;
+        }
+
+        java.io.File file = new java.io.File(path);
+        return file.exists();
     }
-    
+
     /**
      * Create a working set group for this page. This method can only be called
      * once.
@@ -213,16 +211,16 @@ public class ExpressProjectWizardPage extends WizardPage {
 
         Label lblTemplateEngine = new Label(templateGroup, SWT.NONE);
         lblTemplateEngine.setText("Template Engine:");
-        
+
         btnJade = new Button(templateGroup, SWT.RADIO);
         btnJade.setSelection(true);
         btnJade.setText("Jade");
-        
+
         btnEjs = new Button(templateGroup, SWT.RADIO);
         btnEjs.setText("ejs");
-    	
+
     }
-    
+
     /**
      * Returns the current project location path as entered by the user, or its
      * anticipated initial value. Note that if the default has been returned the
@@ -353,8 +351,8 @@ public class ExpressProjectWizardPage extends WizardPage {
         locationArea.setExistingProject(project);
 
         String validLocationMessage = locationArea.checkValidLocation();
-        if (validLocationMessage != null) { // there is no destination location
-                                            // given
+        if (validLocationMessage != null) {
+            // there is no destination location given
             setErrorMessage(validLocationMessage);
             return false;
         }
@@ -393,11 +391,11 @@ public class ExpressProjectWizardPage extends WizardPage {
     public IWorkingSet[] getSelectedWorkingSets() {
         return workingSetGroup == null ? new IWorkingSet[0] : workingSetGroup.getSelectedWorkingSets();
     }
-    
+
     public String getSelectedTemplateEngine() {
-    	if(btnEjs.getSelection()) {
-    		return Constants.TEMPLATE_EJS;
-    	}
-    	return Constants.BLANK_STRING;
+        if (btnEjs.getSelection()) {
+            return Constants.TEMPLATE_EJS;
+        }
+        return Constants.BLANK_STRING;
     }
 }

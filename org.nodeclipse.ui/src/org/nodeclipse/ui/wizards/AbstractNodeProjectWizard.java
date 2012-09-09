@@ -8,7 +8,6 @@ import org.eclipse.ui.IPerspectiveRegistry;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.registry.PerspectiveDescriptor;
@@ -17,13 +16,13 @@ import org.nodeclipse.ui.perspectives.NodePerspective;
 
 @SuppressWarnings("restriction")
 public abstract class AbstractNodeProjectWizard extends Wizard implements INewWizard {
-	
+
     private IWorkbench workbench;
     private IStructuredSelection selection;
-    //private BasicNodeProjectWizardPage mainPage;
-    
+    // private BasicNodeProjectWizardPage mainPage;
+
     private IProject newProject;
-    
+
     public AbstractNodeProjectWizard() {
         setNeedsProgressMonitor(true);
     }
@@ -33,7 +32,7 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
         this.workbench = workbench;
         this.selection = selection;
     }
-    
+
     public IWorkbench getWorkbench() {
         return workbench;
     }
@@ -44,22 +43,22 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
 
     @Override
     public boolean performFinish() {
-    	newProject = createNewProject();
+        newProject = createNewProject();
         if (newProject == null) {
             return false;
         }
         // add to workingsets
-        //IWorkingSet[] workingSets = mainPage.getSelectedWorkingSets();
-        //getWorkbench().getWorkingSetManager().addToWorkingSets(newProject, workingSets);
+        // IWorkingSet[] workingSets = mainPage.getSelectedWorkingSets();
+        // getWorkbench().getWorkingSetManager().addToWorkingSets(newProject,
+        // workingSets);
 
         updatePerspective();
         selectAndReveal();
         return true;
     }
 
-    
     protected abstract IProject createNewProject();
-    
+
     private void selectAndReveal() {
         BasicNewResourceWizard.selectAndReveal(newProject, workbench.getActiveWorkbenchWindow());
     }

@@ -19,7 +19,6 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
 
     private IWorkbench workbench;
     private IStructuredSelection selection;
-    // private BasicNodeProjectWizardPage mainPage;
 
     private IProject newProject;
 
@@ -47,25 +46,18 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
         if (newProject == null) {
             return false;
         }
-        // add to workingsets
-        // IWorkingSet[] workingSets = mainPage.getSelectedWorkingSets();
-        // getWorkbench().getWorkingSetManager().addToWorkingSets(newProject,
-        // workingSets);
-
+        
         updatePerspective();
         selectAndReveal();
         return true;
     }
-
+    
     protected abstract IProject createNewProject();
 
     private void selectAndReveal() {
         BasicNewResourceWizard.selectAndReveal(newProject, workbench.getActiveWorkbenchWindow());
     }
 
-    /**
-     * 更新视图,跳转到NodePerspective视图.
-     */
     private void updatePerspective() {
         IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
         IPerspectiveRegistry reg = WorkbenchPlugin.getDefault().getPerspectiveRegistry();

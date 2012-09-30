@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -15,6 +16,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.dialogs.IOverwriteQuery;
 import org.eclipse.ui.ide.undo.CreateProjectOperation;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
@@ -103,6 +105,12 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
         } catch (InterruptedException e) {
         }
 
+        if(newProjectHandle != null) {
+	        // add to workingsets
+	        IWorkingSet[] workingSets = mainPage.getSelectedWorkingSets();
+	        getWorkbench().getWorkingSetManager().addToWorkingSets(newProjectHandle, workingSets);
+        }
+        
         return newProjectHandle;
     }
 

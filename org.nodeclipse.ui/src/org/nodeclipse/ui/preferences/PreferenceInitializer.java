@@ -19,12 +19,12 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
     public void initializeDefaultPreferences() {
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
         String path = "/usr/local/bin/node";
+        String express_path = "/usr/local/bin/express";
         if (OSUtils.isWindows()) {
             path = "C:/Program Files/nodejs/node.exe";
+            express_path = System.getProperty("user.home").replace('\\', '/') + "/AppData/Roaming/npm/express.cmd";
         }
         store.setDefault(PreferenceConstants.NODE_PATH, path);
-        
-        String express_path = "/usr/local/bin/express";
         store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
     }
 

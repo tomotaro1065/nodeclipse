@@ -69,3 +69,4 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
         }
     }
 }
+

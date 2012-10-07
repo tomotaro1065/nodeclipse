@@ -399,3 +399,4 @@ public class ExpressProjectWizardPage extends WizardPage {
         return Constants.BLANK_STRING;
     }
 }
+

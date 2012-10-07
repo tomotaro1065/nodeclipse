@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -21,11 +23,10 @@ import org.eclipse.ui.dialogs.IOverwriteQuery;
 import org.eclipse.ui.ide.undo.CreateProjectOperation;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.wizards.datatransfer.ImportOperation;
-import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.nature.NodeNature;
-import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.LogUtil;
+import org.nodeclipse.ui.util.ProcessUtils;
 
 public class ExpressProjectWizard extends AbstractNodeProjectWizard {
     private final String WINDOW_TITLE = "New Express Project";
@@ -81,9 +82,9 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
         IRunnableWithProgress op = new IRunnableWithProgress() {
             @Override
             public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-                createProject(description, monitor);
+            	createProject(description, monitor);
 
-                String tempdir = System.getProperty("java.io.tmpdir") + "/express-work/" + new Long(System.currentTimeMillis()).toString();
+                String tempdir = System.getProperty("java.io.tmpdir") + "/express-work/" + new Long(System.currentTimeMillis()).toString();                
                 File workingDirectory = new File(tempdir);
                 if (workingDirectory.mkdirs() == false) {
                     throw new InvocationTargetException(new IOException("failed creation of working directory."));
@@ -92,9 +93,18 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
                 generateExpressApplication(monitor, projectName, templateEngine, workingDirectory);
                 importExpressApplication(monitor, newProjectHandle, workingDirectory);
 
-                deleteFiles(monitor, workingDirectory);
+                monitor.beginTask("Generating Express Project...", 3);
 
-                launchNpmInstall(monitor, newProjectHandle);
+                deleteFiles(monitor, workingDirectory);
+                monitor.worked(1);
+                
+                launchNpmInstall(monitor, newProjectHandle);                
+                try {
+					newProjectHandle.refreshLocal(1, monitor);
+				} catch (CoreException e) {
+					throw new InvocationTargetException(e);
+				}
+                monitor.done();
             }
         };
 
@@ -124,26 +134,21 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
     }
 
     private void generateExpressApplication(IProgressMonitor monitor, String projectName, String templateEngine, File workingDirectory) throws InvocationTargetException {
-        List<String> cmdLine = new ArrayList<String>();
-        cmdLine.add(Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.EXPRESS_PATH));
-        cmdLine.add(projectName);
+        List<String> cmdLine = new ArrayList<String>();        
+        cmdLine.add(ProcessUtils.getExpressPath());
+        cmdLine.add(workingDirectory.getAbsolutePath() + "/" + projectName);
 
         if (!templateEngine.equals(Constants.BLANK_STRING)) {
-            cmdLine.add("-t");
-            cmdLine.add(templateEngine);
+        	int ver = ProcessUtils.getExpressMajorVersion();
+        	if(ver < 3) {
+	            cmdLine.add("-t");
+	            cmdLine.add(templateEngine);
+        	} else {
+        		cmdLine.add("--" + templateEngine);
+        	}
         }
-
-        Process p = null;
-
-        try {
-            String[] env = null;
-            String[] cmds = {};
-            cmds = cmdLine.toArray(cmds);
-            p = Runtime.getRuntime().exec(cmds, env, workingDirectory);
-            p.waitFor();
-        } catch (Exception e) {
-            throw new InvocationTargetException(e);
-        }
+        
+        ProcessUtils.exec(cmdLine, workingDirectory);
     }
 
     private void importExpressApplication(IProgressMonitor monitor, IProject projectHandle, File workingDirectory) throws InvocationTargetException, InterruptedException {
@@ -192,12 +197,12 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
     }
 
     private void launchNpmInstall(IProgressMonitor monitor, IProject projectHandle) throws InvocationTargetException {
-        // IFile packageJson = projectHandle.getFile(Constants.PACKAGE_JSON);
-        // InstallLaunchShortcut launcher = new InstallLaunchShortcut();
-        // try {
-        // launcher.launchFile(packageJson, Constants.METHOD_ICON);
-        // } catch(CoreException e) {
-        // throw new InvocationTargetException(e);
-        // }
+        IFile path = projectHandle.getFile(Constants.PACKAGE_JSON);
+        File workingDirectory = path.getParent().getLocation().toFile();        
+		List<String> cmdLine = new ArrayList<String>();
+        cmdLine.add(ProcessUtils.getNpmPath());
+        cmdLine.add(Constants.NPM_INSTALL);
+        ProcessUtils.exec(cmdLine, workingDirectory);        
     }
 }
+

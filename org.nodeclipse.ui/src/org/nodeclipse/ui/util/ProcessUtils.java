@@ -46,6 +46,9 @@ public class ProcessUtils {
 	public static int getExpressMajorVersion() {
 		String ver = getExpressVersion();
 		int idx = ver.indexOf('.');
+		if(idx < 0) {
+			return 3;
+		}
 		ver = ver.substring(0, idx);
 		int ret = Integer.parseInt(ver);
 		return ret;
@@ -60,21 +63,24 @@ public class ProcessUtils {
 			builder.directory(dir);
 		}
 
-		Map<String, String> env = builder.environment();
-		env.put("PATH", getNodeFolder());
-
+		if(OSUtils.isMacOS()) {
+			Map<String, String> env = builder.environment();
+			env.put("PATH", getNodeFolder());
+		}
+		
 		StringBuilder sb = new StringBuilder();
 		try {
 			Process p = builder.start();
 			String line;
-			BufferedReader bri = new BufferedReader(new InputStreamReader(
-					p.getInputStream()));
-			BufferedReader bre = new BufferedReader(new InputStreamReader(
-					p.getErrorStream()));
+			BufferedReader bri = new BufferedReader(
+					new InputStreamReader(p.getInputStream()));
+			BufferedReader bre = new BufferedReader(
+					new InputStreamReader(p.getErrorStream()));
 			while ((line = bri.readLine()) != null) {
 				sb.append(line);
 				System.out.println(line);
 			}
+			bri.close();
 			while ((line = bre.readLine()) != null) {
 				sb.append(line);
 				System.out.println(line);
@@ -85,6 +91,6 @@ public class ProcessUtils {
 			throw new InvocationTargetException(e);
 		}
 
-		return sb.toString();
+		return sb.toString();	
 	}
 }

@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.nodeclipse.ui.Activator;
@@ -29,9 +30,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		String express_path = "/usr/local/bin/express";
 		File file;
 		if (OSUtils.isWindows()) {
-			path = "C:/Program Files/nodejs/node.exe";
-			express_path = System.getProperty("user.home").replace('\\', '/')
-					+ "/AppData/Roaming/npm/express.cmd";
+			path = "C:/Program Files/nodejs/node.exe".replace('/', File.separatorChar);
+			express_path = System.getProperty("user.home") 
+					+ "/AppData/Roaming/npm/express.cmd".replace('/', File.separatorChar);
 		}
 		if (OSUtils.isMacOS()) {
 			file = new File(path);

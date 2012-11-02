@@ -221,6 +221,10 @@ http://www.apache.org/licenses/
       <discovery label="Nodeclipse Updates" url="http://www.nodeclipse.org/updates"/>
    </url>
 
+   <requires>
+      <import plugin="org.chromium.debug.ui"/>
+   </requires>
+
    <plugin
          id="org.nodeclipse.debug"
          download-size="0"

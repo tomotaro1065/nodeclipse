@@ -70,7 +70,7 @@ public class LaunchShortcut implements ILaunchShortcut,IGoal {
      * @param file
      * @param mode
      */
-    private void launchFile(IFile file, String mode) throws CoreException {
+    public void launchFile(IFile file, String mode) throws CoreException {
         // check for an existing launch config for the file
         String path = file.getFullPath().toString();
         ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();

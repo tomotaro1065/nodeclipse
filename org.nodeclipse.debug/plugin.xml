@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+  <extension point="org.eclipse.core.runtime.adapters">
+    <factory
+        class="org.nodeclipse.debug.model.BreakpointAdapterFactory"
+        adaptableType="org.eclipse.ui.texteditor.ITextEditor">
+      <adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget" /> 
+    </factory>
+  </extension>
+
 	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
       <launchConfigurationType 
@@ -9,11 +17,26 @@
             modes="run, debug" 
             name="Node Application">
       </launchConfigurationType> 
+	    <launchConfigurationType
+	        id="org.nodeclipse.debug.launch.LaunchType$StandaloneV8"
+	        delegate="org.nodeclipse.debug.launch.StandaloneV8LaunchTypeWrapper"
+	        modes="debug"
+	        name="V8 debugger for node"
+	        delegateName="Debug Standalone V8 JavaScript"
+	        delegateDescription="JavaScript debugger for Standalone V8"
+	        sourceLocatorId="org.chromium.debug.core.ChromiumSourceDirector"
+	        sourcePathComputerId="org.chromium.debug.core.ChromiumSourceComputer">
+	    </launchConfigurationType>
     </extension>
     <extension
           point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
        <launchConfigurationTypeImage   
              configTypeID= "org.nodeclipse.debug.launch.LaunchConfigurationType"   
+             icon= "icons/node.png"   
+             id= "org.nodeclipse.debug.launch.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.debug.launch.LaunchType$StandaloneV8"   
              icon= "icons/node.png"   
              id= "org.nodeclipse.debug.launch.LaunchConfigurationTypeImage" >   
        </launchConfigurationTypeImage>   
@@ -57,5 +80,10 @@
       		id= "org.nodeclipse.debug.launch.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.debug.launch.LaunchConfigurationType" >   
 		  </launchConfigurationTabGroup>
+	    <launchConfigurationTabGroup
+	        type="org.nodeclipse.debug.launch.LaunchType$StandaloneV8"
+	        class="org.chromium.debug.ui.launcher.LaunchTabGroup$StandaloneV8"
+	        id="org.nodeclipse.debug.launch.LaunchType$StandaloneV8TabGroup">
+	    </launchConfigurationTabGroup>
    </extension>
 </plugin>

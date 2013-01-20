@@ -52,6 +52,52 @@
             name="Node Editor">
       </editor>
    </extension>
+	<extension point="org.eclipse.debug.ui.toggleBreakpointsTargetFactories">
+	    <toggleTargetFactory
+	            id="org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory"
+	            class="org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory">
+	        <enablement>
+	          <or>
+	             <!-- Applicable for any text editor (java code additionally checks extension) -->
+	             <instanceof value="org.eclipse.ui.texteditor.ITextEditor"/>
+	             <!-- or when our debug element is in context -->
+	             <with variable="debugContext">
+	                <iterate>
+	                  <test property="org.eclipse.debug.ui.getModelIdentifier"
+	                        value="org.chromium.debug"/>
+	                </iterate>
+	             </with>
+	          </or>
+	        </enablement>
+	    </toggleTargetFactory>
+	 </extension>
+	<extension point="org.eclipse.ui.editorActions">
+	    <editorContribution
+	        targetID="org.nodeclipse.ui.editors.NodeEditor"
+	        id="org.chromium.debug.ui.editors.JsEditor.editorActions">
+	      <action
+	          label="Not Used"
+	          class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
+	          style="push"
+	          actionID="RulerDoubleClick"
+	          id="org.chromium.debug.ui.editor.ruler.doubleClickBreakpointAction"/>
+	      <action
+	          toolbarPath="evaluationGroup"
+	          id="org.chromium.debug.ui.SnippetInspect"
+	          definitionId="org.chromium.debug.ui.commands.Inspect"
+	          class="org.chromium.debug.ui.actions.JsInspectSnippetAction"
+	          enablesFor="+"
+	          label="Inspect"
+	          tooltip="Inspect Result of Evaluating Selected Text">
+	        <enablement>
+	            <objectClass
+	                name="org.eclipse.jface.text.ITextSelection"/>
+	        </enablement>
+	      </action>
+	    </editorContribution>
+	  </extension>
+
+
    <extension
          point="org.eclipse.ui.ide.projectNatureImages">
       <image

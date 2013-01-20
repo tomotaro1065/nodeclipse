@@ -12,11 +12,14 @@ import org.chromium.debug.core.model.DebugTargetImpl.State;
 import org.chromium.debug.core.sourcemap.PositionMapBuilderImpl;
 import org.chromium.debug.core.sourcemap.SourcePositionMap;
 import org.chromium.debug.core.sourcemap.SourcePositionMapBuilder;
+import org.chromium.debug.core.util.ChromiumDebugPluginUtil;
 import org.chromium.sdk.DebugContext;
 import org.chromium.sdk.DebugEventListener;
 import org.chromium.sdk.JavascriptVm;
 import org.chromium.sdk.Script;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugEvent;
 import org.eclipse.debug.core.DebugException;
@@ -299,6 +302,9 @@ public class ConnectedTargetData {
         DebugPlugin.getDefault().getBreakpointManager().removeBreakpointListener(
             debugTargetImpl);
         fireTerminateEvent();
+        
+//        final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("STANDALONE_V8");
+//        ChromiumDebugPluginUtil.deleteVirtualProjectAsync(project);
       }
     }
 

@@ -4,9 +4,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.chromium.debug.core.ChromiumDebugPlugin;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -22,6 +25,7 @@ import org.nodeclipse.ui.preferences.PreferenceConstants;
 
 public class LaunchConfigurationDelegate implements
 		ILaunchConfigurationDelegate {
+	private static Process nodeProcess = null;
 
 	/*
 	 * (non-Javadoc)
@@ -35,6 +39,10 @@ public class LaunchConfigurationDelegate implements
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
+		if(nodeProcess != null) {
+			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, null, null));
+		}
+		
 		// Using configuration to build command line
 		List<String> cmdLine = new ArrayList<String>();
 		// Application path should be stored in preference.
@@ -60,11 +68,13 @@ public class LaunchConfigurationDelegate implements
 		// launch.addDebugTarget(target);
 		// }
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-			launchStandaloneV8(mode);
+			launchStandaloneV8(mode, launch, monitor);
 		}
+		nodeProcess = p;
 	}
 
-	private void launchStandaloneV8(final String mode) throws CoreException {
+	private void launchStandaloneV8(final String mode, ILaunch launch,
+			IProgressMonitor monitor) throws CoreException {
 		ILaunchConfigurationType type = DebugPlugin
 				.getDefault()
 				.getLaunchManager()
@@ -72,16 +82,24 @@ public class LaunchConfigurationDelegate implements
 						Constants.STANDALONE_V8_LAUNCH_CONFIGURATION_TYPE_ID);
 		if (type != null) {
 			ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(
-					null, "STANDALNE_V8");
+					null, "STANDALONE_V8");
 			workingCopy.setAttribute("debug_host", "localhost");
 			workingCopy.setAttribute("debug_port", 5858);
 			final ILaunchConfiguration config = workingCopy.doSave();
+			// super.launch(config, mode, launch, monitor);
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
 				public void run() {
 					DebugUITools.launch(config, mode);
 				}
-			});			
+			});
+		}
+	}
+	
+	public static void terminateNodeProcess() {
+		if(nodeProcess != null) {
+			nodeProcess.destroy();
+			nodeProcess = null;
 		}
 	}
 }

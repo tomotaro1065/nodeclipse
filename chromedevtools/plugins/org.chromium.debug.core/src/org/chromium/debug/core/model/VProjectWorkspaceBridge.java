@@ -23,12 +23,10 @@ import org.chromium.sdk.Breakpoint;
 import org.chromium.sdk.CallFrame;
 import org.chromium.sdk.ExceptionData;
 import org.chromium.sdk.JavascriptVm;
-import org.chromium.sdk.JavascriptVm.ExceptionCatchMode;
 import org.chromium.sdk.JavascriptVm.ScriptsCallback;
 import org.chromium.sdk.RelayOk;
 import org.chromium.sdk.Script;
 import org.chromium.sdk.SyncCallback;
-import org.chromium.sdk.util.GenericCallback;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarkerDelta;
 import org.eclipse.core.resources.IProject;
@@ -676,7 +674,7 @@ public class VProjectWorkspaceBridge implements WorkspaceBridge {
     }
   }
 
-  private final static JsLabelProvider LABEL_PROVIDER = new JsLabelProvider() {
+  protected final static JsLabelProvider LABEL_PROVIDER = new JsLabelProvider() {
     public String getTargetLabel(DebugTargetImpl debugTarget) {
       String name = debugTarget.getName();
       String status = debugTarget.getVmStatus();

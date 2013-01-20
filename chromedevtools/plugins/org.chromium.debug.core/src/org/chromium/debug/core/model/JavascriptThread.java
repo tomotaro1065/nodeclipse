@@ -553,7 +553,7 @@ public class JavascriptThread extends DebugElementImpl.WithConnected
   /**
    * Wraps Eclipse mixed-up constants in a dedicated enum type.
    */
-  enum ResumeReason {
+  public enum ResumeReason {
     STEP_INTO(DebugEvent.STEP_INTO, true),
     STEP_OVER(DebugEvent.STEP_OVER, true),
     STEP_RETURN(DebugEvent.STEP_RETURN, true),

@@ -33,7 +33,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 public class ResourceManager {
   private final IProject debugProject;
 
-  private final VmResourceIdMap<VmResourceInfo> resourceIdToInfo =
+  protected final VmResourceIdMap<VmResourceInfo> resourceIdToInfo =
       new VmResourceIdMap<VmResourceInfo>();
 
   private final Map<IFile, VmResourceInfo> file2Info = new HashMap<IFile, VmResourceInfo>();
@@ -115,7 +115,7 @@ public class ResourceManager {
     return info.vmResourceImpl;
   }
 
-  private VmResourceInfo createAndRegisterResourceFile(VmResourceId id,
+  protected VmResourceInfo createAndRegisterResourceFile(VmResourceId id,
       VmResource.Metadata metadata) {
     IFile scriptFile;
     if (id.getName() == null) {
@@ -191,7 +191,7 @@ public class ResourceManager {
     }
   }
 
-  private static void writeScriptSource(Collection<Script> scripts, IFile file) {
+  protected static void writeScriptSource(Collection<Script> scripts, IFile file) {
     String fileSource = MockUpResourceWriter.writeScriptSource(scripts);
 
     try {
@@ -201,7 +201,7 @@ public class ResourceManager {
     }
   }
 
-  private class VmResourceInfo {
+  protected class VmResourceInfo {
     final IFile file;
     final VmResourceId id;
     final VmResource.Metadata metadata;
@@ -209,6 +209,12 @@ public class ResourceManager {
       this.file = file;
       this.id = id;
       this.metadata = metadata;
+    }
+    public VmResource.Metadata getMetadata() {
+    	return metadata;
+    }
+    public IFile getFile() {
+    	return file;
     }
 
     final VmResource vmResourceImpl = new VmResource() {
@@ -243,7 +249,7 @@ public class ResourceManager {
     };
   }
 
-  private static class ScriptSet implements VmResource.ScriptHolder {
+  public static class ScriptSet implements VmResource.ScriptHolder {
     private final Map<Object, Script> idToScript = new HashMap<Object, Script>(2);
 
     public Script getSingleScript() {

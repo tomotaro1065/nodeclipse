@@ -119,7 +119,7 @@ public abstract class LaunchTypeBase implements ILaunchConfigurationDelegate {
 
   protected abstract Direction getPresetSyncDirection();
 
-  private static void terminateTarget(DebugTargetImpl target) {
+  protected static void terminateTarget(DebugTargetImpl target) {
     try {
       target.terminate();
     } catch (DebugException e) {
@@ -161,7 +161,7 @@ public abstract class LaunchTypeBase implements ILaunchConfigurationDelegate {
     return new ConnectionLoggerImpl(consoleRetransmitter, consoleController);
   }
 
-  private static SourceWrapSupport createSourceWrapSupportFromConfig(ILaunchConfiguration config)
+  protected static SourceWrapSupport createSourceWrapSupportFromConfig(ILaunchConfiguration config)
       throws CoreException {
     List<IPredefinedSourceWrapProvider.Entry> entries =
         LaunchParams.PredefinedSourceWrapperIds.resolveEntries(config);
@@ -180,7 +180,7 @@ public abstract class LaunchTypeBase implements ILaunchConfigurationDelegate {
     }
   };
 
-  private static final Runnable OPENING_VIEW_ATTACH_CALLBACK = new Runnable() {
+  protected static final Runnable OPENING_VIEW_ATTACH_CALLBACK = new Runnable() {
     public void run() {
       PluginUtil.openProjectExplorerView();
     }

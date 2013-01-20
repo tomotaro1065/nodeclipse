@@ -9,6 +9,7 @@
 <plugin>
 
   <!-- Breakpoint-related extensions -->
+<!--  
   <extension point="org.eclipse.core.runtime.adapters">
     <factory
         class="org.chromium.debug.core.model.BreakpointAdapterFactory"
@@ -16,6 +17,7 @@
       <adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget" /> 
     </factory>
   </extension>
+-->
   
   <extension point="org.eclipse.debug.core.breakpoints">
       <breakpoint

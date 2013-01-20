@@ -368,7 +368,7 @@ public class DebugTargetImpl extends DebugElementImpl implements IDebugTarget {
     }
   }
 
-  BreakpointSynchronizer.Direction getPresetSyncDirection() {
+  public BreakpointSynchronizer.Direction getPresetSyncDirection() {
     return presetSyncDirection;
   }
 }

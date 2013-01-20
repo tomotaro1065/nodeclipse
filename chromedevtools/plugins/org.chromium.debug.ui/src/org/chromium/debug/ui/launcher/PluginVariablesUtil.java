@@ -11,7 +11,7 @@ import org.eclipse.core.variables.VariablesPlugin;
  * Provides convenient access to the variables declared in the
  * org.eclipse.core.variables.valueVariables extension point.
  */
-class PluginVariablesUtil {
+public class PluginVariablesUtil {
 
   /** The default server port variable id. */
   public static final String DEFAULT_HOST =

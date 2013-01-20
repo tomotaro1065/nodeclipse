@@ -20,4 +20,10 @@ Require-Bundle: org.eclipse.ui,
  org.chromium.sdk.wip.eclipse;bundle-version="0.3.9"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.chromium.debug.ui
+Export-Package: org.chromium.debug.ui,
+ org.chromium.debug.ui.actions,
+ org.chromium.debug.ui.actions.pinpoint,
+ org.chromium.debug.ui.editors,
+ org.chromium.debug.ui.launcher,
+ org.chromium.debug.ui.liveedit,
+ org.chromium.debug.ui.propertypages

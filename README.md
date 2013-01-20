@@ -15,10 +15,11 @@ please leave a comment stating so in the Nodeclipse forum.
 * Syntax highlighting
 * Content Assistant
 * NPM support
+* Debugging - Breakpoint, Trace, etc...
 
 # INSTALLING
 
-Update Site : http://www.nodeclipse.org/updates
+Update Site : http://www.tomotaro1065.com/nodeclipse/updates/
 
 # CONTACT
-Not hesitate to contact me. Feel free to send [email](mailto:dev@nodeclipse.com) to me.
+Not hesitate to contact me. Feel free to send [email](mailto:tomotaro1065@gmail.com) to me.

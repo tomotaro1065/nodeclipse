@@ -20,6 +20,7 @@ import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.swt.widgets.Display;
 import org.nodeclipse.debug.util.Constants;
+import org.nodeclipse.debug.util.NodeDebugUtil;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 
@@ -68,32 +69,9 @@ public class LaunchConfigurationDelegate implements
 		// launch.addDebugTarget(target);
 		// }
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-			launchStandaloneV8(mode, launch, monitor);
+			NodeDebugUtil.launch(mode, launch, monitor);
 		}
 		nodeProcess = p;
-	}
-
-	private void launchStandaloneV8(final String mode, ILaunch launch,
-			IProgressMonitor monitor) throws CoreException {
-		ILaunchConfigurationType type = DebugPlugin
-				.getDefault()
-				.getLaunchManager()
-				.getLaunchConfigurationType(
-						Constants.STANDALONE_V8_LAUNCH_CONFIGURATION_TYPE_ID);
-		if (type != null) {
-			ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(
-					null, "STANDALONE_V8");
-			workingCopy.setAttribute("debug_host", "localhost");
-			workingCopy.setAttribute("debug_port", 5858);
-			final ILaunchConfiguration config = workingCopy.doSave();
-			// super.launch(config, mode, launch, monitor);
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					DebugUITools.launch(config, mode);
-				}
-			});
-		}
 	}
 	
 	public static void terminateNodeProcess() {

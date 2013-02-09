@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse"
       label="Nodeclipse"
-      version="0.1.8.qualifier">
+      version="0.2.0.qualifier">
 
    <description url="http://www.nodeclipse.org/">
       Node support for Eclipse
@@ -217,7 +217,7 @@ http://www.apache.org/licenses/
    </license>
 
    <url>
-      <update label="Nodeclipse Updates" url="http://www.nodeclipse.org/updates"/>
+      <update label="Nodeclipse Updates" url="http://www.tomotaro1065.com/nodeclipse/updates/"/>
       <discovery label="Nodeclipse Updates" url="http://www.nodeclipse.org/updates"/>
    </url>
 

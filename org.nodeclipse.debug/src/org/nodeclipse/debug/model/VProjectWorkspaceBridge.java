@@ -50,6 +50,7 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.osgi.util.NLS;
 import org.nodeclipse.debug.launch.LaunchConfigurationDelegate;
+import org.nodeclipse.debug.util.NodeDebugUtil;
 
 public class VProjectWorkspaceBridge implements WorkspaceBridge {
 	/** The debug model ID. */
@@ -89,6 +90,7 @@ public class VProjectWorkspaceBridge implements WorkspaceBridge {
 					// .getWorkspace().getRoot()
 					// .getProject("STANDALONE_V8");
 					if (debugProject != null && debugProject.exists()) {
+						NodeDebugUtil.deleteConfig();
 						ChromiumDebugPluginUtil
 								.deleteVirtualProjectAsync(debugProject);
 						DebugPlugin.getDefault().removeDebugEventListener(debugListener);
@@ -137,9 +139,6 @@ public class VProjectWorkspaceBridge implements WorkspaceBridge {
 	}
 
 	public void launchRemoved() {
-		if (debugProject != null) {
-			// ChromiumDebugPluginUtil.deleteVirtualProjectAsync(debugProject);
-		}
 	}
 
 	public void beforeDetach() {

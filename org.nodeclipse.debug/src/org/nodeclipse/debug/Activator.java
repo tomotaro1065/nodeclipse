@@ -1,10 +1,8 @@
 package org.nodeclipse.debug;
 
-import org.chromium.debug.core.util.ChromiumDebugPluginUtil;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.nodeclipse.debug.util.NodeDebugUtil;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -44,11 +42,9 @@ public class Activator extends AbstractUIPlugin {
      * )
      */
     public void stop(BundleContext context) throws Exception {
-        final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("STANDALONE_V8");
-        if (project.exists()) {
-        	project.delete(true, null);
-        }
-        
+    	NodeDebugUtil.deleteConfig();
+    	NodeDebugUtil.deleteProject();
+    	
         plugin = null;
         super.stop(context);
     }

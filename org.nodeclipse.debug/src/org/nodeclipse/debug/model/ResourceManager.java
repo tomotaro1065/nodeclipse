@@ -86,6 +86,14 @@ public class ResourceManager extends
 		if(jsFilename.equals(path)) {
 			return true;
 		}
+		path = path.replace('/', '\\');
+		if(path.startsWith("\\")) {
+			path = path.substring(1);
+		}
+		if(jsFilename.equals(path)) {
+			return true;
+		}
+		
 		return false;
 	}
 	

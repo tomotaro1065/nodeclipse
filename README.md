@@ -48,3 +48,5 @@ Site that reference this project
 http://www.oschina.net/p/nodeclipse  
 http://stackoverflow.com/questions/8025825/is-there-a-nodejs-plugin-for-aptana-studio  
 http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse  
+http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using
+

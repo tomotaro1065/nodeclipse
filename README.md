@@ -22,5 +22,17 @@ please leave a comment stating so in the Nodeclipse forum.
 Update Site : http://www.nodeclipse.org/updates
 Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
 
+# ROADMAP
+
+* Add Markdown support via [](http://www.winterwell.com/software/markdown-editor.php) by: [Daniel Winterstein](http://winterstein.me.uk)
+	Download site: http://winterwell.com/software/updatesite/
+* Add README.md template into project templates	
+* Add Jade support	(no resources found)
+
 # CONTACT
-Not hesitate to contact me. Feel free to send [email](mailto:dev@nodeclipse.com) to me.
+Do not hesitate to contact developers. Feel free to send [email](mailto:dev@nodeclipse.com).
+
+# CONTRIBUTROS
+Ä§¶¼ https://github.com/Nodeclipse
+Tomoyuki Inagaki https://github.com/tomotaro1065
+Paul Verest https://github.com/PaulVI/

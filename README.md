@@ -1,4 +1,4 @@
-# Nodeclipse -- Node support for Eclipse
+﻿# Nodeclipse -- Node support for Eclipse
 
 
 > [Nodeclipse](http://www.nodeclipse.org/) is an plugin that 
@@ -24,7 +24,7 @@ Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
 
 # ROADMAP
 
-* Add Markdown support via [](http://www.winterwell.com/software/markdown-editor.php) by: [Daniel Winterstein](http://winterstein.me.uk)
+* Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) by: [Daniel Winterstein](http://winterstein.me.uk)
 	Download site: http://winterwell.com/software/updatesite/
 * Add README.md template into project templates	
 * Add Jade support	(no resources found)
@@ -33,6 +33,6 @@ Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
 Do not hesitate to contact developers. Feel free to send [email](mailto:dev@nodeclipse.com).
 
 # CONTRIBUTROS
-ħ�� https://github.com/Nodeclipse
-Tomoyuki Inagaki https://github.com/tomotaro1065
-Paul Verest https://github.com/PaulVI/
+魔都 https://github.com/Nodeclipse  
+Tomoyuki Inagaki https://github.com/tomotaro1065  
+Paul Verest https://github.com/PaulVI/  

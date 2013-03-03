@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.ui,
  org.chromium.debug.ui;bundle-version="0.3.9",
  org.chromium.sdk;bundle-version="0.3.9",
  org.eclipse.ui.editors;bundle-version="3.7.0",
- org.eclipse.jface.text;bundle-version="3.7.2"
+ org.eclipse.jface.text
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

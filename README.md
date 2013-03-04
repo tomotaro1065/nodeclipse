@@ -29,16 +29,23 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 
 * Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
 	Download site: http://winterwell.com/software/updatesite/
-* Add README.md template into project templates	
+* Update template for new project
+** Add README.md 
+** Add hellow-world-server.js
+* Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
+	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
 * Add Jade support	(no resources found)
+* Intergrate console window (library unknown)
 
 ## Contacts
 Do not hesitate to contact developers. Feel free to send [email](mailto:dev@nodeclipse.com).
+Or skype me by ID pverest.
 
 ## Contributors
-魔都 https://github.com/Nodeclipse  
+LambGao 魔都 https://github.com/Nodeclipse  
 Tomoyuki Inagaki https://github.com/tomotaro1065  
-Paul Verest https://github.com/PaulVI/  
+Paul Verest https://github.com/PaulVI/ 
+Scott Elcomb https://github.com/psema4 (original creator)
 
 ## Spread the words
 

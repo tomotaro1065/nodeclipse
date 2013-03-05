@@ -27,6 +27,12 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 
 ## Roadmap
 
+* Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
+* Obfuscation and source-level debugging features using Source Maps
+* Unit test support
+* Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
+	Download site: https://eclipse-plugin.herokuapp.com/install
+
 * Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
 	Download site: http://winterwell.com/software/updatesite/
 * Update template for new project

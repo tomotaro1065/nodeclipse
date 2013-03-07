@@ -10,15 +10,13 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
-import org.eclipse.debug.core.ILaunchConfigurationType;
-import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
-import org.eclipse.debug.ui.DebugUITools;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.debug.core.model.RuntimeProcess;
 import org.nodeclipse.debug.util.Constants;
 import org.nodeclipse.debug.util.NodeDebugUtil;
 import org.nodeclipse.ui.Activator;
@@ -26,7 +24,7 @@ import org.nodeclipse.ui.preferences.PreferenceConstants;
 
 public class LaunchConfigurationDelegate implements
 		ILaunchConfigurationDelegate {
-	private static Process nodeProcess = null;
+	private static RuntimeProcess nodeProcess = null;
 
 	/*
 	 * (non-Javadoc)
@@ -40,7 +38,7 @@ public class LaunchConfigurationDelegate implements
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
-		if(nodeProcess != null) {
+		if(nodeProcess != null && !nodeProcess.isTerminated()) {
 			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, null, null));
 		}
 		
@@ -63,20 +61,27 @@ public class LaunchConfigurationDelegate implements
 		// Launch a process to debug.eg,
 		Process p = DebugPlugin
 				.exec(cmds, (new File(filePath)).getParentFile());
-		DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
+		RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
 		// if (mode.equals(ILaunchManager.DEBUG_MODE)) {
 		// DebugTarget target = new DebugTarget(launch, process, p);
 		// launch.addDebugTarget(target);
 		// }
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-			NodeDebugUtil.launch(mode, launch, monitor);
+			if(!process.isTerminated()) { 
+				NodeDebugUtil.launch(mode, launch, monitor);
+			}
 		}
-		nodeProcess = p;
+		nodeProcess = process;
 	}
 	
 	public static void terminateNodeProcess() {
 		if(nodeProcess != null) {
-			nodeProcess.destroy();
+			try {
+				nodeProcess.terminate();
+			} catch (DebugException e) {
+				e.printStackTrace();
+			}
+//			nodeProcess.destroy();
 			nodeProcess = null;
 		}
 	}

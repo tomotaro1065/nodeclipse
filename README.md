@@ -1,26 +1,71 @@
-# Nodeclipse -- Node support for Eclipse
+﻿# Nodeclipse -- Node.js support for Eclipse
 
 
-> [Nodeclipse](http://www.nodeclipse.org/) is an plugin that 
-adds IDE functionality to the [Eclipse](http://www.eclipse.org/) 
-for the [Node](http://www.nodejs.org/). 
+> [Nodeclipse](http://www.nodeclipse.org/) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
 The purpose of Nodeclipse is to create an environment in 
-which development of Node is easy for a beginner to intermediate user. 
+which development of Node is easy for any user from beginner to intermediate user. 
 Development is slow, but ongoing. If you would like to help out, 
 please leave a comment stating so in the Nodeclipse forum.
 
-# FEATURES
+## Vision
 
-* New Node Project and New Node Source File create default structure
-* Syntax highlighting
+One-stop shop for Node.js tools.
+
+We can't develop everything at once, but we let you know what are the best things around for Node.js development with Eclipse.
+
+## Features
+
+* Creating default structure for New Node Project and New Node Source File 
+* JavaScript Syntax highlighting
 * Content Assistant
 * NPM support
-* Debugging - Breakpoint, Trace, etc...
+* Debugging - Breakpoint, Trace, etc... via [Eclipse debugger plugin for V8](http://code.google.com/p/chromedevtools/)
 
-# INSTALLING
+## Installing
 
-Update Site : http://www.nodeclipse.org/updates
+Update Site : http://www.nodeclipse.org/updates  
 Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
 
-# CONTACT
-Not hesitate to contact me. Feel free to send [email](mailto:dev@nodeclipse.com) to me.
+## Usage
+
+Check http://www.tomotaro1065.com/nodeclipse/  
+For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
+
+## Roadmap
+
+* Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
+* Obfuscation and source-level debugging features using Source Maps
+* Unit test support
+* Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
+	Download site: https://eclipse-plugin.herokuapp.com/install
+
+* Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
+	Download site: http://winterwell.com/software/updatesite/
+* Update template for new project
+** Add README.md 
+** Add hellow-world-server.js
+* Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
+	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
+* Add Jade support	(no resources found, please let us know)
+* Intergrate console window (library unknown)
+
+## Contacts
+Do not hesitate to contact developers. Feel free to send [email](mailto:dev@nodeclipse.com).
+Or skype me by ID pverest.
+
+## Contributors
+LambGao 魔都 https://github.com/Nodeclipse  
+Tomoyuki Inagaki https://github.com/tomotaro1065  
+Paul Verest https://github.com/PaulVI/  
+Scott Elcomb https://github.com/psema4 (original creator)
+
+## Spread the words
+
+Please let others know about this effort. Add links below:  
+
+Site that reference this project  
+http://www.oschina.net/p/nodeclipse  
+http://stackoverflow.com/questions/8025825/is-there-a-nodejs-plugin-for-aptana-studio  
+http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse  
+http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using
+

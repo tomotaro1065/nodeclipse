@@ -7,6 +7,12 @@ which development of Node is easy for any user from beginner to intermediate use
 Development is slow, but ongoing. If you would like to help out, 
 please leave a comment stating so in the Nodeclipse forum.
 
+## Vision
+
+One-stop shop for Node.js tools.
+
+We can't develop everything at once, but we let you know what are the best things around for Node.js development with Eclipse.
+
 ## Features
 
 * Creating default structure for New Node Project and New Node Source File 
@@ -40,7 +46,7 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 ** Add hellow-world-server.js
 * Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
-* Add Jade support	(no resources found)
+* Add Jade support	(no resources found, please let us know)
 * Intergrate console window (library unknown)
 
 ## Contacts
@@ -50,7 +56,7 @@ Or skype me by ID pverest.
 ## Contributors
 LambGao 魔都 https://github.com/Nodeclipse  
 Tomoyuki Inagaki https://github.com/tomotaro1065  
-Paul Verest https://github.com/PaulVI/ 
+Paul Verest https://github.com/PaulVI/  
 Scott Elcomb https://github.com/psema4 (original creator)
 
 ## Spread the words

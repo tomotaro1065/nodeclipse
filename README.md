@@ -14,22 +14,24 @@ One-stop shop for Node.js tools.
 We can't develop everything at once, but we let you know what are the best things around for Node.js development with Eclipse.
 
 ## Features
-
+### ver 0.1.8
 * Creating default structure for New Node Project and New Node Source File 
 * JavaScript Syntax highlighting
 * Content Assistant
 * NPM support
+
+### ver 0.2.0
 * Debugging - Breakpoint, Trace, etc... via [Eclipse debugger plugin for V8](http://code.google.com/p/chromedevtools/)
+* Generating Express project
 
 ## Installing
 
-Update Site : http://www.nodeclipse.org/updates  
-Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
+Update Site for ver 0.1.8 : http://www.nodeclipse.org/updates  
+Testing Site for ver 0.2.0: http://www.tomotaro1065.com/nodeclipse/updates/
 
 ## Usage
 
 Check http://www.tomotaro1065.com/nodeclipse/  
-For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
 ## Roadmap
 
@@ -68,4 +70,6 @@ http://www.oschina.net/p/nodeclipse
 http://stackoverflow.com/questions/8025825/is-there-a-nodejs-plugin-for-aptana-studio  
 http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse  
 http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using
+http://stackoverflow.com/questions/12641679/nodejs-a-step-by-step-debugger-for-nodejs/15296275#15296275
+
 

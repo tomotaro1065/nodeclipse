@@ -2,11 +2,9 @@
 
 ![nodeclipse-logo](nodeclipse-logo-rough.png)
 
-> [Nodeclipse](http://www.nodeclipse.org/) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
-The purpose of Nodeclipse is to create an environment in 
-which development of Node is easy for any user from beginner to intermediate user. 
-Development is slow, but ongoing. If you would like to help out, 
-please leave a comment stating so in the Nodeclipse forum.
+> [Nodeclipse](http://www.nodeclipse.org/) or [Nodeclipse-1](http://www.tomotaro1065.com/nodeclipse/) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
+The purpose of Nodeclipse is to create environment in 
+which Node.js development is easy for any user from beginner to professional. 
 
 ## Vision
 
@@ -25,11 +23,11 @@ We can't develop everything at once, but we let you know what are the best thing
 ## Installing
 
 Update Site : http://www.nodeclipse.org/updates  
-Testing Site: http://www.tomotaro1065.com/nodeclipse/updates/
+Testing Site (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updates/
 
 ## Usage
 
-Check http://www.tomotaro1065.com/nodeclipse/  
+Check out http://www.tomotaro1065.com/nodeclipse/  
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
 ## Roadmap
@@ -49,10 +47,14 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
 - [ ] Add Jade support	(no resources found, please let us know)
 - [ ] Integrate console window (library unknown)
-
+- [ ] Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
+	Download site: http://coffeescript-editor.eclipselabs.org.codespot.com/hg/
+	
+	
 ## Contacts
-Do not hesitate to contact developers. Feel free to send [email](mailto:dev@nodeclipse.com).
-Or skype me by ID pverest.
+Do not hesitate to contact developers. 
+Create issue or send [email](mailto:dev@nodeclipse.com).
+Or skype me by ID pverest, QQ 908781544.
 
 ## Contributors
 LambGao 魔都 https://github.com/Nodeclipse (original creator) 

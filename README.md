@@ -45,7 +45,7 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 * Add hellow-world-server.js
 - [ ] Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
-- [ ] Add Jade support	(no resources found, please let us know)
+- [ ] Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)
 - [ ] Integrate console window (library unknown)
 - [ ] Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
 	Download site: http://coffeescript-editor.eclipselabs.org.codespot.com/hg/
@@ -57,10 +57,10 @@ Create issue or send [email](mailto:dev@nodeclipse.com).
 Or skype me by ID pverest, QQ 908781544.
 
 ## Contributors
-LambGao 魔都 https://github.com/Nodeclipse (original creator) 
-Scott Elcomb https://github.com/psema4 
-Tomoyuki Inagaki https://github.com/tomotaro1065  (debugging integration)
-Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings)
+LambGao 魔都 https://github.com/Nodeclipse (original creator)   
+Scott Elcomb https://github.com/psema4  
+Tomoyuki Inagaki https://github.com/tomotaro1065  (debugging integration)  
+Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings)  
 
 ## Spread the words
 
@@ -73,3 +73,16 @@ http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse
 http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using
 https://groups.google.com/forum/#!msg/nodejs/ayLUeUOanzA/et6EEZppVjMJ
 http://stackoverflow.com/questions/15407334/eclipse-rcp-add-optional-dependencies
+
+### Hot requests
+
+http://stackoverflow.com/questions/14533885/which-ide-supports-coffeescript-debugging-source-mapping-breakpoints-call-st
+http://stackoverflow.com/questions/10286364/coffeescript-editor-plugin-for-eclipse
+http://stackoverflow.com/questions/7057466/how-to-use-coffeescript-and-eclipse-together-in-windows
+
+### Links
+
+http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so-that-its-features-can-be-updated-automatica?rq=1
+http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions
+http://wiki.eclipse.org/Tycho/Reference_Card
+add interesting stuff here...

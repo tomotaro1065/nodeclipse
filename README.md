@@ -2,7 +2,7 @@
 
 ![nodeclipse-logo](nodeclipse-logo-rough.png)
 
-> [Nodeclipse](http://www.nodeclipse.org/) or [Nodeclipse-1](http://www.tomotaro1065.com/nodeclipse/) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
+> [Nodeclipse](http://www.nodeclipse.org/) or [Nodeclipse-1 v0.2](http://www.tomotaro1065.com/nodeclipse/) is [Eclipse](http://www.eclipse.org/) plugin for the [Node.js](http://www.nodejs.org/). 
 The purpose of Nodeclipse is to create environment in 
 which Node.js development is easy for any user from beginner to professional. 
 
@@ -22,13 +22,23 @@ We can't develop everything at once, but we let you know what are the best thing
 
 ## Installing
 
-Update Site : http://www.nodeclipse.org/updates  
-Testing Site (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updates/
+Download site v0.1.8: http://www.nodeclipse.org/updates  
+Download site v>0.2 (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updates/
 
 ## Usage
 
 Check out http://www.tomotaro1065.com/nodeclipse/  
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
+
+{% youtube aTe7SoaNd1E %}
+
+If you can not access the video, please try <a href="http://tomotaro1065.github.com/nodeclipse/index2.htm">here</a>.
+
+For Markdown: 
+1. Window -> Show View -> Other... -> Markdown
+2. Click inside "Markdown HTML Preview" view to refresh rendering
+3. (Optionaly, Recommended because double whitespace is hard line break) Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
+
 
 ## Roadmap
 
@@ -41,7 +51,7 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 - [ ] Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
 	Download site: http://winterwell.com/software/updatesite/
 - [ ] Update template for new project
-* Add README.md 
+* Add README.md template
 * Add hellow-world-server.js
 - [ ] Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
@@ -70,19 +80,21 @@ Site that reference this project
 http://www.oschina.net/p/nodeclipse  
 http://stackoverflow.com/questions/8025825/is-there-a-nodejs-plugin-for-aptana-studio  
 http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse  
-http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using
-https://groups.google.com/forum/#!msg/nodejs/ayLUeUOanzA/et6EEZppVjMJ
-http://stackoverflow.com/questions/15407334/eclipse-rcp-add-optional-dependencies
+http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using  
+https://groups.google.com/forum/#!msg/nodejs/ayLUeUOanzA/et6EEZppVjMJ  
+http://stackoverflow.com/questions/15407334/eclipse-rcp-add-optional-dependencies  
 
 ### Hot requests
 
-http://stackoverflow.com/questions/14533885/which-ide-supports-coffeescript-debugging-source-mapping-breakpoints-call-st
-http://stackoverflow.com/questions/10286364/coffeescript-editor-plugin-for-eclipse
-http://stackoverflow.com/questions/7057466/how-to-use-coffeescript-and-eclipse-together-in-windows
+http://stackoverflow.com/questions/14533885/which-ide-supports-coffeescript-debugging-source-mapping-breakpoints-call-st  
+http://stackoverflow.com/questions/10286364/coffeescript-editor-plugin-for-eclipse  
+http://stackoverflow.com/questions/7057466/how-to-use-coffeescript-and-eclipse-together-in-windows  
 
-### Links
+### Interesting and useful Links
 
-http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so-that-its-features-can-be-updated-automatica?rq=1
-http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions
-http://wiki.eclipse.org/Tycho/Reference_Card
+http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so-that-its-features-can-be-updated-automatica?rq=1  
+http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions  
+http://wiki.eclipse.org/Tycho/Reference_Card  
+http://stackoverflow.com/questions/10529859/how-to-include-video-in-jekyll-markdown-blog  
+http://stackoverflow.com/questions/2330620/eclipse-i-turned-on-hidden-characters-now-i-cant-turn-off  
 add interesting stuff here...

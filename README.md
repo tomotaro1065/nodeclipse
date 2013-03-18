@@ -35,9 +35,11 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 If you can not access the video, please try <a href="http://tomotaro1065.github.com/nodeclipse/index2.htm">here</a>.
 
 For Markdown: 
+
 1. Window -> Show View -> Other... -> Markdown
 2. Click inside "Markdown HTML Preview" view to refresh rendering
-3. (Optionaly, Recommended because double whitespace is hard line break) Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
+3. (Optional, recommended because double whitespace is hard line break) 
+	Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
 
 
 ## Roadmap
@@ -66,10 +68,20 @@ Do not hesitate to contact developers.
 Create issue or send [email](mailto:dev@nodeclipse.com).
 Or skype me by ID pverest, QQ 908781544.
 
+## Developing
+
+Before starting development, please do
+
+1. Carefully read materials
+2. Install and give thorough try
+3. Contact current contributors, make friends
+4. Say what you are going to do, before you head in.
+
+
 ## Contributors
-LambGao 魔都 https://github.com/Nodeclipse (original creator)   
+LambGao 魔都 https://github.com/Nodeclipse (original creator v0.1.8)   
 Scott Elcomb https://github.com/psema4  
-Tomoyuki Inagaki https://github.com/tomotaro1065  (debugging integration)  
+Tomoyuki Inagaki https://github.com/tomotaro1065  (debugging integration v0.2)  
 Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings)  
 
 ## Spread the words

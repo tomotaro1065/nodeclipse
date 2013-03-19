@@ -1,4 +1,4 @@
-# Nodeclipse -- Node.js support for Eclipse
+# Nodeclipse - Node.js support in Eclipse IDE
 
 ![nodeclipse-logo](nodeclipse-logo-rough.png)
 
@@ -30,14 +30,13 @@ Download site v>0.2 (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updat
 Check out http://www.tomotaro1065.com/nodeclipse/  
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
-{% youtube aTe7SoaNd1E %}
-
+<p>
 <center>
 	<video controls width="640" height="480">
 		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4" />
 		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm" />
 		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.ogv" />
-		Your browser do not support HTML5 video tag.					
+		Your browser doesn't not support HTML5 video tag.					
 	</video><br/><br/>
 	<ul>
 	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4">download mp4 video</a></li>
@@ -45,6 +44,7 @@ For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://githu
 	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm">download webm video</a></li>
 	</ul>
 </center>
+</p>
 
 If you can not access the video, please try <a href="http://tomotaro1065.github.com/nodeclipse/index2.htm">here</a>.
 
@@ -102,7 +102,7 @@ Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings) 
 
 Please let others know about this effort. Add links below:  
 
-Site that reference this project  
+Sites that reference this project  
 http://www.oschina.net/p/nodeclipse  
 http://stackoverflow.com/questions/8025825/is-there-a-nodejs-plugin-for-aptana-studio  
 http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse  
@@ -124,16 +124,17 @@ http://www.iteye.com/news/23933
 
 Nide http://coreh.github.com/nide/ v0.2 Last update 2012-04  
 JetBrains WebStorm or [IntelliJ IDEA](www.jetbrains.com/idea/features/nodejs.html) (commercial products)  
-Microsoft WebMatrix (free) or Visual Studio ((commercial product)  
+Microsoft WebMatrix (free) or Visual Studio (commercial product)  
 CloudIDE [c9.io](https://c9.io) (cloud service)  
 Scripted https://github.com/scripted-editor/scripted  
 Eclipse Orion  
+komodo-ide http://www.activestate.com/komodo-ide (commercial product) 
 
 #### Hints
 
+http://wiki.eclipse.org/Tycho/Reference_Card  
 http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so-that-its-features-can-be-updated-automatica?rq=1  
 http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions  
-http://wiki.eclipse.org/Tycho/Reference_Card  
 http://stackoverflow.com/questions/10529859/how-to-include-video-in-jekyll-markdown-blog  
 http://stackoverflow.com/questions/2330620/eclipse-i-turned-on-hidden-characters-now-i-cant-turn-off  
 add interesting stuff here...

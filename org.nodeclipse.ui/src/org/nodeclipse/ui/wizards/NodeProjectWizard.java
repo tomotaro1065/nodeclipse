@@ -155,6 +155,8 @@ public class NodeProjectWizard extends Wizard implements INewWizard {
             LogUtil.error(e);
         } catch (InterruptedException e) {
         }
+        
+        //TODO copy README.md & hello-world-server.js
 
         newProject = newProjectHandle;
     }

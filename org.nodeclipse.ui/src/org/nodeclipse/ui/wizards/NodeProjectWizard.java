@@ -220,6 +220,7 @@ public class NodeProjectWizard extends Wizard implements INewWizard {
 	}
 
 	private void rewriteReadme(IProject projectHandle) throws CoreException {
+		String newLine = System.getProperty("line.separator");
 		IFile readme = projectHandle.getFile("README.md");
 		if(!readme.exists()) {
 			throw new CoreException(new Status(IStatus.ERROR,
@@ -235,12 +236,12 @@ public class NodeProjectWizard extends Wizard implements INewWizard {
 					line = line.replace("${projectname}", projectHandle.getName());
 				}
 				sb.append(line);
-				sb.append("\r\n");
+				sb.append(newLine);
 			}
 			ByteArrayInputStream source = new ByteArrayInputStream(sb.toString().getBytes());
 			readme.setContents(source, true, true, null);
 		} catch (IOException e) {
-			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot read .settings/org.eclipse.jdt.apt.core.prefs"));
+			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot read README.md"));
 		} finally {
 			try {
 				ir.close();

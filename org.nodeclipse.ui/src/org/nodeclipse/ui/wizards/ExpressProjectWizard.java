@@ -1,7 +1,12 @@
 package org.nodeclipse.ui.wizards;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -15,6 +20,8 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -25,6 +32,7 @@ import org.eclipse.ui.dialogs.IOverwriteQuery;
 import org.eclipse.ui.ide.undo.CreateProjectOperation;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.wizards.datatransfer.ImportOperation;
+import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.nature.NodeNature;
 import org.nodeclipse.ui.npm.InstallLaunchShortcut;
 import org.nodeclipse.ui.util.Constants;
@@ -111,6 +119,13 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 				deleteFiles(monitor, workingDirectory);
 				monitor.worked(1);
 
+				try {
+					rewritePackageJson(monitor, newProjectHandle);
+					generateReadme(monitor, newProjectHandle);
+				} catch (CoreException e1) {
+					throw new InvocationTargetException(e1);
+				}
+				
 				Display.getDefault().asyncExec(new Runnable() {
 					@Override
 					public void run() {
@@ -121,6 +136,7 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 						}
 					}
 				});
+				
 				try {
 					newProjectHandle.refreshLocal(1, monitor);
 				} catch (CoreException e) {
@@ -228,6 +244,66 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 			}
 			f.delete();
 		}
+	}
+	
+	private void rewritePackageJson(IProgressMonitor monitor, IProject projectHandle) throws CoreException {
+		String newLine = System.getProperty("line.separator");
+		IFile file = projectHandle.getFile("package.json");
+		if(!file.exists()) {
+			throw new CoreException(new Status(IStatus.ERROR,
+					Activator.PLUGIN_ID, "package.json not found"));
+		}
+		InputStreamReader ir = new InputStreamReader(file.getContents());
+		BufferedReader br = new BufferedReader(ir);
+		StringBuilder sb = new StringBuilder();
+		String line;
+		try {
+			while((line = br.readLine()) != null) {
+				if(line.contains("application-name")) {
+					line = line.replace("application-name", projectHandle.getName());
+				}
+				sb.append(line);
+				sb.append(newLine);
+			}
+			ByteArrayInputStream source = new ByteArrayInputStream(sb.toString().getBytes());
+			file.setContents(source, true, true, null);
+		} catch (IOException e) {
+			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot read package.json"));
+		} finally {
+			try {
+				ir.close();
+				br.close();
+			} catch (IOException e) {
+			}
+			ir = null;
+			br = null;
+		}		
+	}
+	
+	private void generateReadme(IProgressMonitor monitor, IProject projectHandle) throws CoreException {
+		IFile readme = projectHandle.getFile("README.md");
+		StringWriter sw = new StringWriter();
+		BufferedWriter bw = new BufferedWriter(sw);
+		try {
+			bw.write("# ");
+			bw.write(projectHandle.getName());
+			bw.newLine();
+			bw.newLine();
+			bw.newLine();
+			bw.write("Created with [Nodeclipse v0.2](http://tomotaro1065.github.com/nodeclipse/) ");
+			bw.newLine();
+		} catch (IOException e) {
+			throw new CoreException(
+						new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage()));
+		} finally {
+			try {
+				bw.close();
+				sw.close();
+			} catch (IOException e) {
+			}
+		}
+		ByteArrayInputStream source = new ByteArrayInputStream(sw.toString().getBytes());
+		readme.create(source, true, monitor);
 	}
 
 	private void launchNpmInstall(IProject projectHandle) throws InvocationTargetException, CoreException {

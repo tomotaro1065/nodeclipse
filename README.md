@@ -92,6 +92,7 @@ http://stackoverflow.com/questions/8179369/debugging-node-js-with-eclipse
 http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-most-people-using  
 https://groups.google.com/forum/#!msg/nodejs/ayLUeUOanzA/et6EEZppVjMJ  
 http://stackoverflow.com/questions/15407334/eclipse-rcp-add-optional-dependencies  
+http://cnodejs.org/topic/5149c795069911196df84af7   
 
 ### Hot requests
 

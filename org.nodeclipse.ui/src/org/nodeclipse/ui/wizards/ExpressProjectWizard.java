@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -38,6 +40,7 @@ import org.nodeclipse.ui.npm.InstallLaunchShortcut;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.LogUtil;
 import org.nodeclipse.ui.util.ProcessUtils;
+import org.osgi.framework.Bundle;
 
 public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 	private final String WINDOW_TITLE = "New Express Project";
@@ -178,7 +181,15 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 	private void generateExpressApplication(IProgressMonitor monitor,
 			String projectName, IProject projectHandle, String templateEngine, File workingDirectory)
 			throws InvocationTargetException {
+		Bundle bundle = Activator.getDefault().getBundle();
+		if (bundle == null) {
+			throw new InvocationTargetException(
+					new CoreException(
+						new Status(IStatus.ERROR, Activator.PLUGIN_ID, "bundle not found")));
+		}
+		
 		List<String> cmdLine = new ArrayList<String>();
+		cmdLine.add(ProcessUtils.getNodePath());
 		cmdLine.add(ProcessUtils.getExpressPath());
 		cmdLine.add(workingDirectory.getAbsolutePath() + "/" + projectName);
 

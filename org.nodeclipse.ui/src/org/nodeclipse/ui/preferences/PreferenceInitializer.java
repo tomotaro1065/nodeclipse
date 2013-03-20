@@ -26,12 +26,19 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		String path = "/usr/local/bin/node";
-		String express_path = "/usr/local/bin/express";
+//		String express_path = "/usr/local/bin/express";
+		String express_path = "/usr/local/lib/node_modules/express/bin/express";
 		File file;
 		if (OSUtils.isWindows()) {
 			path = "C:/Program Files/nodejs/node.exe".replace('/', File.separatorChar);
+			file = new File(path);
+			if (!file.exists()) {
+				path = "C:/Program Files (x86)/nodejs/node.exe".replace('/', File.separatorChar);
+			}
+//			express_path = System.getProperty("user.home") 
+//					+ "/AppData/Roaming/npm/express.cmd".replace('/', File.separatorChar);
 			express_path = System.getProperty("user.home") 
-					+ "/AppData/Roaming/npm/express.cmd".replace('/', File.separatorChar);
+					+ "/AppData/Roaming/npm/node_modules/express/bin/express".replace('/', File.separatorChar);
 		}
 		if (OSUtils.isMacOS()) {
 			file = new File(path);
@@ -40,7 +47,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			}
 			file = new File(express_path);
 			if (!file.exists()) {
-				express_path = "/opt/local/bin/express";
+//				express_path = "/opt/local/bin/express";
+				express_path = "/opt/local/lib/node_modules/express/bin/express";
 			}
 		}
 		file = new File(path);
@@ -57,6 +65,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 	private String getExpressVersion(String express) {
 		List<String> cmdLine = new ArrayList<String>();
+		cmdLine.add(ProcessUtils.getNodePath());
 		cmdLine.add(ProcessUtils.getExpressPath());
 		cmdLine.add("--version");
 		String ret = Constants.BLANK_STRING;

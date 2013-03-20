@@ -27,53 +27,36 @@ Download site v>0.2 (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updat
 
 ## Usage
 
-Check out http://www.tomotaro1065.com/nodeclipse/  
+Check out http://www.tomotaro1065.com/nodeclipse/ great article and [watch video](http://tomotaro1065.github.com/nodeclipse/index2.htm).    
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
-<p>
-<center>
-	<video controls width="640" height="480">
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4" />
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm" />
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.ogv" />
-		Your browser doesn't not support HTML5 video tag.					
-	</video><br/><br/>
-	<ul>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4">download mp4 video</a></li>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.ogv">download ogv video</a></li>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm">download webm video</a></li>
-	</ul>
-</center>
-</p>
-
-If you can not access the video, please try <a href="http://tomotaro1065.github.com/nodeclipse/index2.htm">here</a>.
-
-For Markdown: 
+For [Markdown](http://daringfireball.net/projects/markdown/dingus): 
 
 1. Window -> Show View -> Other... -> Markdown
 2. Click inside "Markdown HTML Preview" view to refresh rendering
-3. (Optional, recommended because double whitespace is hard line break) 
+3. (Optional, may be useful because double whitespace is hard line break) 
 	Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
 
 
 ## Roadmap
 
-- [ ] Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
-- [ ] Obfuscation and source-level debugging features using Source Maps
-- [ ] Unit test support
-- [ ] Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
+- Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
+- Obfuscation and source-level debugging features using Source Maps
+- Unit test support
+- Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
 	Download site: https://eclipse-plugin.herokuapp.com/install
 
-- [ ] Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
+- Add [Markdown](http://daringfireball.net/projects/markdown/dingus) support via [Markdown Editor plugin for Eclipse]
+(http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
 	Download site: http://winterwell.com/software/updatesite/
-- [ ] Update template for new project
+- Update template for new project
 * Add README.md template
 * Add hellow-world-server.js
-- [ ] Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
+- Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
-- [ ] Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)
-- [ ] Integrate console window (library unknown)
-- [ ] Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
+- Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)
+- Integrate console window (library unknown)
+- Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
 	Download site: http://coffeescript-editor.eclipselabs.org.codespot.com/hg/
 	
 	
@@ -128,7 +111,8 @@ Microsoft WebMatrix (free) or Visual Studio (commercial product)
 CloudIDE [c9.io](https://c9.io) (cloud service)  
 Scripted https://github.com/scripted-editor/scripted  
 Eclipse Orion  
-komodo-ide http://www.activestate.com/komodo-ide (commercial product) 
+komodo-ide http://www.activestate.com/komodo-ide (commercial product)  
+Netbeans have a [NodeJS plugin](http://plugins.netbeans.org/plugin/36653/nodejs)  
 
 #### Hints
 

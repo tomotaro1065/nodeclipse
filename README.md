@@ -67,7 +67,10 @@ TBD
 - Integrate console window (library unknown)
 - Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
 	Download site: http://coffeescript-editor.eclipselabs.org.codespot.com/hg/
-	
+- [Eclipse Json Editor Plugin](http://sourceforge.net/p/eclipsejsonedit/wiki/Home/) Last Update: 2012-11-07
+ (The JSON Editor is a simple plugin for the Eclipse IDE that provides: - Color text highlighting - An Outline Tree view - JSON validation
+  - Text formatting - Text folding for the JSON data format.)	
+  No Update site.
 	
 ## Contacts
 Do not hesitate to contact developers. 
@@ -131,5 +134,6 @@ http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so
 http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions  
 http://stackoverflow.com/questions/10529859/how-to-include-video-in-jekyll-markdown-blog  
 http://stackoverflow.com/questions/2330620/eclipse-i-turned-on-hidden-characters-now-i-cant-turn-off  
+[Eclipse JavaScript Development Tools (JSDT)](http://eclipse.org/webtools/jsdt/) has only JS web support.     
 add interesting stuff here...
 

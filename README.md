@@ -40,11 +40,7 @@ For [Markdown](http://daringfireball.net/projects/markdown/dingus):
 
 ## Roadmap
 
-- Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
-- Obfuscation and source-level debugging features using Source Maps
-- Unit test support
-- Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
-	Download site: https://eclipse-plugin.herokuapp.com/install
+### 0.3 (April-May 2013)
 
 - Add [Markdown](http://daringfireball.net/projects/markdown/dingus) support via [Markdown Editor plugin for Eclipse]
 (http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
@@ -52,6 +48,19 @@ For [Markdown](http://daringfireball.net/projects/markdown/dingus):
 - Update template for new project
 * Add README.md template
 * Add hellow-world-server.js
+
+### 0.4 (TBD)
+
+TBD
+
+### Ideas, proposals, work-in-progress etc.
+
+- Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
+- Obfuscation and source-level debugging features using Source Maps
+- Unit test support
+- Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
+	Download site: https://eclipse-plugin.herokuapp.com/install
+
 - Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
 - Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)

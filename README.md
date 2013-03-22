@@ -27,7 +27,7 @@ Download site v>0.2 (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updat
 
 ## Usage
 
-Check out http://www.tomotaro1065.com/nodeclipse/ great article and [watch video](http://tomotaro1065.github.com/nodeclipse/index2.htm).    
+Check out [great article](http://www.tomotaro1065.com/nodeclipse/) and [watch video](http://tomotaro1065.github.com/nodeclipse/index2.htm).    
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
 For [Markdown](http://daringfireball.net/projects/markdown/dingus): 

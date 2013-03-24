@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-  <extension point="org.eclipse.core.runtime.adapters">
-    <factory
-        class="org.nodeclipse.debug.model.BreakpointAdapterFactory"
-        adaptableType="org.eclipse.ui.texteditor.ITextEditor">
-      <adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget" /> 
-    </factory>
-  </extension>
+    <extension point="org.eclipse.core.runtime.adapters">
+        <factory
+            class="org.nodeclipse.debug.model.BreakpointAdapterFactory"
+            adaptableType="org.eclipse.ui.texteditor.ITextEditor">
+          <adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget" /> 
+        </factory>
+    </extension>
 
 	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
-      <launchConfigurationType 
+        <launchConfigurationType 
             delegate="org.nodeclipse.debug.launch.LaunchConfigurationDelegate" 
             id="org.nodeclipse.debug.launch.LaunchConfigurationType" 
             modes="run, debug" 
             name="Node Application">
-      </launchConfigurationType> 
+        </launchConfigurationType> 
 	    <launchConfigurationType
 	        id="org.nodeclipse.debug.launch.LaunchType$StandaloneV8"
 	        delegate="org.nodeclipse.debug.launch.StandaloneV8LaunchTypeWrapper"
@@ -74,12 +74,12 @@
        </shortcut>   
    </extension>
    <extension
-          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-          <launchConfigurationTabGroup   
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
        		class= "org.nodeclipse.debug.launch.LaunchConfigurationTabGroup"   
       		id= "org.nodeclipse.debug.launch.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.debug.launch.LaunchConfigurationType" >   
-		  </launchConfigurationTabGroup>
+		</launchConfigurationTabGroup>
 	    <launchConfigurationTabGroup
 	        type="org.nodeclipse.debug.launch.LaunchType$StandaloneV8"
 	        class="org.chromium.debug.ui.launcher.LaunchTabGroup$StandaloneV8"

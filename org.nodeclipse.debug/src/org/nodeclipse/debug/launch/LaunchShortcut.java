@@ -7,6 +7,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
+import org.eclipse.debug.internal.ui.DebugUIPlugin;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchShortcut;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -75,7 +76,6 @@ public class LaunchShortcut implements ILaunchShortcut {
         ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(Constants.LAUNCH_CONFIGURATION_TYPE_ID);
         ILaunchConfiguration configuration = createLaunchConfiguration(type, path, file);
         DebugUITools.launch(configuration, mode);
-
     }
 
     /**
@@ -88,8 +88,17 @@ public class LaunchShortcut implements ILaunchShortcut {
      * @throws CoreException
      */
     private ILaunchConfiguration createLaunchConfiguration(ILaunchConfigurationType type, String path, IFile file) throws CoreException {
-        // create a new configuration for the file
-        ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, file.getName());
+    	String configname = file.getName();
+
+    	ILaunchConfiguration[] configs = DebugPlugin.getDefault().getLaunchManager().getLaunchConfigurations(type);
+    	for(ILaunchConfiguration config : configs) {
+    		if(configname.equals(config.getName())) {
+    			return config;
+    		}
+    	}
+    	
+    	// create a new configuration for the file
+        ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, configname);
         workingCopy.setAttribute(Constants.KEY_FILE_PATH, path);
         return workingCopy.doSave();
     }

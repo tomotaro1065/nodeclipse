@@ -26,5 +26,7 @@ public class Constants {
     public static final String FILE_LABEL = "File";
     public static final String SEARCH_LABEL = "Search...";
     public static final String SEARCH_TITLE = "Search File";
-
+    
+    public static final String ATTR_PROGRAM_ARGUMENTS = "attr_program_arguments";
+    public static final String ATTR_NODE_ARGUMENTS = "attr_node_arguments";
 }

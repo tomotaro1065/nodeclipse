@@ -50,22 +50,36 @@ public class LaunchConfigurationDelegate implements
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
 			cmdLine.add("--debug-brk=5858");
 		}
-		String file = configuration.getAttribute(Constants.KEY_FILE_PATH,
-				Constants.BLANK_STRING);
-		String filePath = ResourcesPlugin.getWorkspace().getRoot()
-				.findMember(file).getLocation().toOSString();
+		
+		String nodeArgs = configuration.getAttribute(Constants.ATTR_NODE_ARGUMENTS, "");
+		if(!nodeArgs.equals("")) {
+			String[] sa = nodeArgs.split(" ");
+			for(String s : sa) {
+				cmdLine.add(s);
+			}
+		}
+		
+		String file = 
+				configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
+		String filePath = 
+				ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 		// path is relative, so can not found it.
 		cmdLine.add(filePath);
+
+		String programArgs = configuration.getAttribute(Constants.ATTR_PROGRAM_ARGUMENTS, "");
+		if(!programArgs.equals("")) {
+			String[] sa = programArgs.split(" ");
+			for(String s : sa) {
+				cmdLine.add(s);
+			}
+		}
+		
 		String[] cmds = {};
 		cmds = cmdLine.toArray(cmds);
 		// Launch a process to debug.eg,
 		Process p = DebugPlugin
 				.exec(cmds, (new File(filePath)).getParentFile());
 		RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
-		// if (mode.equals(ILaunchManager.DEBUG_MODE)) {
-		// DebugTarget target = new DebugTarget(launch, process, p);
-		// launch.addDebugTarget(target);
-		// }
 		if (mode.equals(ILaunchManager.DEBUG_MODE)) {
 			if(!process.isTerminated()) { 
 				NodeDebugUtil.launch(mode, launch, monitor);
@@ -81,7 +95,6 @@ public class LaunchConfigurationDelegate implements
 			} catch (DebugException e) {
 				e.printStackTrace();
 			}
-//			nodeProcess.destroy();
 			nodeProcess = null;
 		}
 	}

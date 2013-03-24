@@ -5,6 +5,7 @@ import org.eclipse.debug.ui.CommonTab;
 import org.eclipse.debug.ui.ILaunchConfigurationDialog;
 import org.eclipse.debug.ui.ILaunchConfigurationTab;
 
+
 /**
  * Using "Run"-->"Run Configurations"--> "New Configuration"-- > "Run" willlead
  * here.
@@ -13,7 +14,11 @@ public class LaunchConfigurationTabGroup extends AbstractLaunchConfigurationTabG
 
     @Override
     public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
-        ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { new LaunchConfigurationMainTab(), new CommonTab() };
+        ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { 
+        		new LaunchConfigurationMainTab(),
+        		new NodeArgumentsTab(),
+        		new CommonTab() 
+        };
         setTabs(tabs);
     }
 }

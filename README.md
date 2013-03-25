@@ -47,7 +47,8 @@ For [Markdown](http://daringfireball.net/projects/markdown/dingus):
 	Download site: http://winterwell.com/software/updatesite/
 - Update template for new project
 * Add README.md template
-* Add hellow-world-server.js
+* Add hello-world-server.js
+* [Publish](http://marketplace.eclipse.org/quickstart) on Eclipse marketplace
 
 ### 0.4 (TBD)
 
@@ -72,26 +73,35 @@ TBD
   - Text formatting - Text folding for the JSON data format.)	
   No Update site.
 	
-## Contacts
-Do not hesitate to contact developers. 
-Create issue or send [email](mailto:dev@nodeclipse.com).
-Or skype me by ID pverest, QQ 908781544.
-
 ## Developing
 
 Before starting development, please do
 
 1. Carefully read materials
 2. Install and give thorough try
-3. Contact current contributors, make friends
-4. Say what you are going to do, before you head in.
-
+3. Contact developers, make friends
+4. Say what you are going to do, before you head in. Share and discuss ideas.
 
 ## Contributors
 LambGao 魔都 https://github.com/Nodeclipse (original creator v0.1.8)   
 Scott Elcomb https://github.com/psema4  
 Tomoyuki Inagaki https://github.com/tomotaro1065 (debugging integration v0.2) [blog](http://tomotaro1065.blog52.fc2.com/)   
 Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings) [blog](https://github.com/PaulVI/blog)   
+
+## Contacts
+Do not hesitate to contact developers. 
+Create issue or send [email to dev group](mailto:dev@nodeclipse.org).
+Or skype me by ID pverest, QQ 908781544.
+
+## For Bloggers and Users of Twitter, Flickr, LinkedIn, Weibo etc.
+
+In case you plan to blog or tweet about the Nodeclipse plugin, please use the tag "#nodeclipse"
+ in order to make it easier to find all the comments and pictures. Thanks a lot for telling the world about the project!  
+  | 请用#nodeclipse#标签微博一下。  
+  | Por favor, use etiqueta #nodeclipse  
+  | なじるする＃nodeclipseタグを使用してください。   
+  | Bitte benutzen Sie tag #nodeclipse um zu twiten.
+
 
 ## Spread the words
 

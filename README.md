@@ -85,7 +85,7 @@ Before starting development, please do
 ## Contributors
 LambGao 魔都 https://github.com/Nodeclipse (original creator v0.1.8)   
 Scott Elcomb https://github.com/psema4  
-Tomoyuki Inagaki https://github.com/tomotaro1065 (debugging integration v0.2) [blog](http://tomotaro1065.blog52.fc2.com/)   
+Tomoyuki Inagaki https://github.com/tomotaro1065 (debugging integration v0.2) [blog](http://d.hatena.ne.jp/tomotaro1065/)   
 Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings) [blog](https://github.com/PaulVI/blog)   
 
 ## Contacts
@@ -98,8 +98,8 @@ Or skype me by ID pverest, QQ 908781544.
 In case you plan to blog or tweet about the Nodeclipse plugin, please use the tag "#nodeclipse"
  in order to make it easier to find all the comments and pictures. Thanks a lot for telling the world about the project!  
   | 请用#nodeclipse#标签微博一下。  
-  | Por favor, use etiqueta #nodeclipse  
-  | なじるする＃nodeclipseタグを使用してください。   
+  | Por favor, utilizar etiqueta #nodeclipse  
+  | ツイートする時は、＃nodeclipseタグを使用してください。  
   | Bitte benutzen Sie tag #nodeclipse um zu twiten.
 
 

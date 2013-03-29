@@ -19,6 +19,7 @@ We can't develop everything at once, but we let you know what are the best thing
 * Content Assistant
 * NPM support
 * Debugging - Breakpoint, Trace, etc... via [Eclipse debugger plugin for V8](http://code.google.com/p/chromedevtools/)
+* Support for Juno
 
 ## Installing
 
@@ -48,7 +49,9 @@ For [Markdown](http://daringfireball.net/projects/markdown/dingus):
 - Update template for new project
 * Add README.md template
 * Add hello-world-server.js
-* [Publish](http://marketplace.eclipse.org/quickstart) on Eclipse marketplace
+* Add package.json (This is good practice)
+v [Publish](http://marketplace.eclipse.org/quickstart) on Eclipse marketplace
+
 
 ### 0.4 (TBD)
 

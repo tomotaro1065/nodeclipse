@@ -19,6 +19,7 @@ We can't develop everything at once, but we let you know what are the best thing
 * NPM support
 * Debugging - Breakpoint, Trace, etc... via [Eclipse debugger plugin for V8](http://code.google.com/p/chromedevtools/)
 * Generating Express project
+* Support for Juno
 
 ## Installing
 
@@ -27,75 +28,83 @@ Download site v>0.2 (Nodeclipse-1): http://www.tomotaro1065.com/nodeclipse/updat
 
 ## Usage
 
-Check out http://www.tomotaro1065.com/nodeclipse/  
+Check out [great article](http://www.tomotaro1065.com/nodeclipse/) and [watch video](http://tomotaro1065.github.com/nodeclipse/index2.htm).    
 For debugging check [Using-Eclipse-as-Node-Applications-Debugger]( https://github.com/joyent/node/wiki/Using-Eclipse-as-Node-Applications-Debugger)
 
-<p>
-<center>
-	<video controls width="640" height="480">
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm" />
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4" />
-		<source src="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.ogv" />
-	</video><br/><br/>
-	<ul>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.mp4">download mp4 video</a></li>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.ogv">download ogv video</a></li>
-	<li><a href="http://tomotaro1065.github.com/nodeclipse/Nodeclipse-0.2.0.webm">download webm video</a></li>
-	</ul>
-</center>
-</p>
-
-If you can not access the video, please try <a href="http://tomotaro1065.github.com/nodeclipse/index2.htm">here</a>.
-
-For Markdown: 
+For [Markdown](http://daringfireball.net/projects/markdown/dingus): 
 
 1. Window -> Show View -> Other... -> Markdown
 2. Click inside "Markdown HTML Preview" view to refresh rendering
-3. (Optional, recommended because double whitespace is hard line break) 
+3. (Optional, may be useful because double whitespace is hard line break) 
 	Show whitespace character via Preferences > General > Editors > Text Editors : checkbox labeled "Show whitespace characters"
 
 
 ## Roadmap
 
-- [ ] Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
-- [ ] Obfuscation and source-level debugging features using Source Maps
-- [ ] Unit test support
-- [ ] Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
+### 0.3 (April-May 2013)
+
+- Add [Markdown](http://daringfireball.net/projects/markdown/dingus) support via [Markdown Editor plugin for Eclipse]
+(http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
+	Download site: http://winterwell.com/software/updatesite/
+- Update template for new project
+* Add README.md template
+* Add hello-world-server.js
+* Add package.json (This is good practice)
+v [Publish](http://marketplace.eclipse.org/quickstart) on Eclipse marketplace
+
+
+### 0.4 (TBD)
+
+TBD
+
+### Ideas, proposals, work-in-progress etc.
+
+- Debugging features without Chrome developer tools.  In other words, debugging on Node Editor
+- Obfuscation and source-level debugging features using Source Maps
+- Unit test support
+- Easily deployment to Heroku (possibly via [Heroku Eclipse plugin](https://devcenter.heroku.com/articles/getting-started-with-heroku-eclipse))  
 	Download site: https://eclipse-plugin.herokuapp.com/install
 
-- [ ] Add Markdown support via [Markdown Editor plugin for Eclipse](http://www.winterwell.com/software/markdown-editor.php) developped by [Daniel Winterstein](http://winterstein.me.uk)  
-	Download site: http://winterwell.com/software/updatesite/
-- [ ] Update template for new project
-* Add README.md template
-* Add hellow-world-server.js
-- [ ] Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
+- Add [JSHint](http://www.jshint.com/) integration for Eclipse, [developed by EclipseSource](https://github.com/eclipsesource/jshint-eclipse)  
 	Download site: http://github.eclipsesource.com/jshint-eclipse/updates/
-- [ ] Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)
-- [ ] Integrate console window (library unknown)
-- [ ] Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
+- Add Jade support	(http://blog.wookets.com/2011/10/how-to-compile-coffeescript-jade-stylus.html Posted 30th October 2011 by Sean Wesenberg)
+- Integrate console window (library unknown)
+- Add CoffeeScript support via [coffeescript-eclipse plugin](https://github.com/adamschmideg/coffeescript-eclipse)  
 	Download site: http://coffeescript-editor.eclipselabs.org.codespot.com/hg/
+- [Eclipse Json Editor Plugin](http://sourceforge.net/p/eclipsejsonedit/wiki/Home/) Last Update: 2012-11-07
+ (The JSON Editor is a simple plugin for the Eclipse IDE that provides: - Color text highlighting - An Outline Tree view - JSON validation
+  - Text formatting - Text folding for the JSON data format.)	
+  No Update site.
 	
-	
-## Contacts
-Do not hesitate to contact developers. 
-Create issue or send [email](mailto:dev@nodeclipse.com).
-Or skype me by ID pverest, QQ 908781544.
-
 ## Developing
 
 Before starting development, please do
 
 1. Carefully read materials
 2. Install and give thorough try
-3. Contact current contributors, make friends
-4. Say what you are going to do, before you head in.
-
+3. Contact developers, make friends
+4. Say what you are going to do, before you head in. Share and discuss ideas.
 
 ## Contributors
 LambGao 魔都 https://github.com/Nodeclipse (original creator v0.1.8)   
 Scott Elcomb https://github.com/psema4  
 Tomoyuki Inagaki https://github.com/tomotaro1065 (debugging integration v0.2) [blog](http://d.hatena.ne.jp/tomotaro1065/)   
 Paul Verest https://github.com/PaulVI/  (Vision, readme, reference to plugings) [blog](https://github.com/PaulVI/blog)   
+
+## Contacts
+Do not hesitate to contact developers. 
+Create issue or send [email to dev group](mailto:dev@nodeclipse.org).
+Or skype me by ID pverest, QQ 908781544.
+
+## For Bloggers and Users of Twitter, Flickr, LinkedIn, Weibo etc.
+
+In case you plan to blog or tweet about the Nodeclipse plugin, please use the tag "#nodeclipse"
+ in order to make it easier to find all the comments and pictures. Thanks a lot for telling the world about the project!  
+  | 请用#nodeclipse#标签微博一下。  
+  | Por favor, utilizar etiqueta #nodeclipse  
+  | ツイートする時は、＃nodeclipseタグを使用してください。  
+  | Bitte benutzen Sie tag #nodeclipse um zu twiten.
+
 
 ## Spread the words
 
@@ -109,6 +118,7 @@ http://stackoverflow.com/questions/7038961/node-js-in-eclipse-which-plugins-are-
 https://groups.google.com/forum/#!msg/nodejs/ayLUeUOanzA/et6EEZppVjMJ  
 http://stackoverflow.com/questions/15407334/eclipse-rcp-add-optional-dependencies  
 http://stackoverflow.com/questions/12641679/nodejs-a-step-by-step-debugger-for-nodejs/15296275#15296275
+http://cnodejs.org/topic/5149c795069911196df84af7   
 
 ### Hot requests
 
@@ -128,7 +138,8 @@ Microsoft WebMatrix (free) or Visual Studio (commercial product)
 CloudIDE [c9.io](https://c9.io) (cloud service)  
 Scripted https://github.com/scripted-editor/scripted  
 Eclipse Orion  
-komodo-ide http://www.activestate.com/komodo-ide (commercial product) 
+komodo-ide http://www.activestate.com/komodo-ide (commercial product)  
+Netbeans have a [NodeJS plugin](http://plugins.netbeans.org/plugin/36653/nodejs)  
 
 #### Hints
 
@@ -137,5 +148,6 @@ http://stackoverflow.com/questions/10352089/how-do-i-build-an-eclipse-rcp-app-so
 http://stackoverflow.com/questions/14591472/installing-an-additional-feature-during-product-build-for-some-eclipse-versions  
 http://stackoverflow.com/questions/10529859/how-to-include-video-in-jekyll-markdown-blog  
 http://stackoverflow.com/questions/2330620/eclipse-i-turned-on-hidden-characters-now-i-cant-turn-off  
+[Eclipse JavaScript Development Tools (JSDT)](http://eclipse.org/webtools/jsdt/) has only JS web support.     
 add interesting stuff here...
 
